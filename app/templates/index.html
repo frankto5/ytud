@@ -1,0 +1,31 @@
+{% extends "generic.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- Input and Download Button -->
+
+<div class="container  mt-5">
+ 	<h2 class="my-5 text-center">Esta es una app en un servidor de prueba , no es funcional.</h2>
+ 		<form class="input-group" action="download/">
+			<input name="url" type="text" class="form-control" placeholder="Link del video" aria-label="link" aria-describedby="button-addon2">
+  			<button class="btn btn-outline-success" type="submit" id="button-addon2">Descargar</button>
+		</form>
+</div>
+
+<!-- End Input and Download Button -->
+
+<!-- Help start -->
+<div class="container mt-5">
+    <ol class="list-group list-group-numbered">
+ 		<li class="list-group-item">Elige tu video a descargar de YouTube y procede a pegar el link en el cuadro de texto indicado.</li>
+  		<li class="list-group-item">Una vez has pegado el link en el cuadro de texto presiona en descargar para continuar.</li>
+  		<li class="list-group-item">En la ventana de descargas asegúrate de elegir el formato correcto
+		, MP3 (solo audio) y MP4 (audio y video).</li>
+	</ol>
+</div>
+<!-- Help end -->
+
+{% endblock %}

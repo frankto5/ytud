@@ -1,0 +1,20 @@
+{% extends "generic.html" %}
+
+{% load static %}
+
+{% block content %}
+
+
+<!-- Main Content Start -->
+    <div class="container mt-5">
+        <div class="alert alert-danger">
+            <h2 class="alert-heading">La descarga no se pudo completar.</h2>
+            <p>
+                Intentelo de nuevo pinchando <a href="{% url 'ytdownloader:home' %}" class="alert-link">aquí.</a>
+            </p>
+      </div>
+        <p>Si tiene algún problema puede consultar en la ventana de Contacto.</p>
+    </div>
+<!-- Main Content End -->
+
+{% endblock %}

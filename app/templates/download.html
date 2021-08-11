@@ -1,0 +1,52 @@
+
+<!-- Main Content Start -->
+
+	<div class="container d-flex">
+		<iframe class="mx-auto my-5" width="560" height="315" src={{embed}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	<div class="container">
+		<table class="table table-hover table-striped">
+			<thead class="bg-dark text-white">
+			  <tr>
+				<th scope="col">Tipo</th>
+				<th scope="col">Calidad</th>
+				<th scope="col">Formato</th>
+				<th scope="col">Descargar</th>
+			  </tr>
+			</thead>
+			{% for i in video %}
+			<tbody>
+			  <tr>
+				<th>{{i.type}}</th>
+				<td>{{i.resolution}}</td>
+				<td>{{i.subtype}}</td>
+				<td>
+					<form action="{% url 'ytdownloader:finish' i.resolution %}" method="post" >
+						{% csrf_token %}
+						{% if i.resolution == '144p' %}
+						<input type="submit" value="Descargar" class="btn btn-outline-success btn-sm" disabled aria-disabled="true">
+						{% else %}
+						<input type="submit" value="Descargar" class="btn btn-outline-success btn-sm">
+						{% endif %}
+					</form>
+				</td>
+			  </tr>
+			 </tbody>
+			 {% endfor %}
+			 {% for i in audio %}
+			 <tbody>
+			   <tr>
+				 <th>{{i.type}}</th>
+				 <td>{{i.abr}}</td>
+				 <td>mp3</td>
+				 <td>
+					<form action="{% url 'ytdownloader:finish' i.resolution %}" method="post" >
+						<input type="submit" value="Descargar" class="btn btn-outline-success btn-sm" disabled aria-disabled="true">
+					</form>
+				 </td>
+			   </tr>
+			  </tbody>
+			  {% endfor %}
+		  </table>
+	</div>
+	<!-- Main Content End -->

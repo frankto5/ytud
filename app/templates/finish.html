@@ -1,0 +1,21 @@
+{% extends "generic.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Main Content Start -->
+<div class="container mt-5">
+    <div class="alert alert-success">
+        <h2 class="alert-heading">La descarga finalizó con exíto.</h2>
+        <p>
+        Puede regresar al inicio pinchando <a href="{% url 'ytdownloader:home' %}" class="alert-link">aquí.</a>
+        </p>
+    </div>
+        <p>Si no encuentra el video descargado , busque en su carpeta de descargas.</p>
+        <p>Si usa frecuentemente la aplicación y le fue de ayuda considere donar.</p>
+        <p>Si tiene alguna duda puede consultar en la ventana de Contacto.</p>
+</div>
+<!-- Main Content End -->
+ 
+{% endblock %}

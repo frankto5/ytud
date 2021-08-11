@@ -1,0 +1,15 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+.logo__img{
+    height: 50px;
+}
+.help__container{
+    width: 100px;
+    height: 200px;
+    background-color: black;
+}
+textarea{
+    resize: none;
+}
